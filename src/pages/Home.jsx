@@ -8,7 +8,7 @@ import DescriptionSection from '../components/DescriptionSection';
 import DonsSection from '../components/DonsSection';
 import ContactSection from '../components/ContactSection';
 import { useEvents } from '../hooks/useEvents';
-import './Home.css';
+import './styles/Home.css';
 
 const Home = () => {
     const { events, loading } = useEvents();
@@ -19,8 +19,8 @@ const Home = () => {
     return (
         <>
             <Header />
-            <VerseBanner />
             <HeroSlider />
+            <VerseBanner />
             <DescriptionSection />
             <DonsSection />
             <ContactSection />

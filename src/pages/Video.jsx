@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import VerseBanner from '../components/VerseBanner';
-import './Video.css';
+import './styles/Video.css';
 
 const videos = [
     { 
@@ -58,33 +58,52 @@ const videos = [
 ];
 
 const Video = () => {
+    const [selectedVideo, setSelectedVideo] = useState(null);
+
+    const openModal = (video) => {
+        setSelectedVideo(video);
+        // Anpeche background nan skrole lè modal ouvè
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeModal = () => {
+        setSelectedVideo(null);
+        document.body.style.overflow = 'auto';
+    };
+
     return (
         <>
             <Header />
-            <VerseBanner />
+          
             <section className="video-hero">
                 <div className="container">
                     <h1><i className="fas fa-video"></i> Moments marquants</h1>
                     <p>Revivez les instants de grâce où Dieu s'est manifesté parmi nous.</p>
                 </div>
             </section>
+
             <section className="videos-grid">
                 <div className="container">
-                    <Link to="/" className="btn-retour"><i className="fas fa-arrow-left"></i> Retour</Link>
                     {videos.map(video => (
-                        <div key={video.id} className="video-card">
-                            <div className="video-wrapper">
-                                <iframe 
-                                    src={`https://www.youtube.com/embed/${video.videoId}`} 
-                                    title={video.title} 
-                                    frameBorder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                    referrerPolicy="strict-origin-when-cross-origin" 
-                                    allowFullScreen>
-                                </iframe>
+                        <div 
+                            key={video.id} 
+                            className="video-card"
+                            onClick={() => openModal(video)}
+                        >
+                            <div className="video-thumbnail">
+                                <img 
+                                    src={`https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`} 
+                                    alt={video.title}
+                                    loading="lazy"
+                                />
+                                <div className="play-icon">
+                                    <i className="fas fa-play"></i>
+                                </div>
                             </div>
                             <div className="video-info">
-                                <span className="video-date"><i className="far fa-calendar-alt"></i> {video.date}</span>
+                                <span className="video-date">
+                                    <i className="far fa-calendar-alt"></i> {video.date}
+                                </span>
                                 <h3>{video.title}</h3>
                                 <p>{video.description}</p>
                             </div>
@@ -92,6 +111,32 @@ const Video = () => {
                     ))}
                 </div>
             </section>
+
+            {/* Modal pou louvri videyo a */}
+            {selectedVideo && (
+                <div className="video-modal-overlay" onClick={closeModal}>
+                    <div className="video-modal-content" onClick={e => e.stopPropagation()}>
+                        <button className="modal-close-btn" onClick={closeModal}>
+                            <i className="fas fa-times"></i>
+                        </button>
+                        <div className="modal-video-wrapper">
+                            <iframe 
+                                src={`https://www.youtube.com/embed/${selectedVideo.videoId}?autoplay=1`} 
+                                title={selectedVideo.title}
+                                frameBorder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerPolicy="strict-origin-when-cross-origin" 
+                                allowFullScreen>
+                            </iframe>
+                        </div>
+                        <div className="modal-video-info">
+                            <h2>{selectedVideo.title}</h2>
+                            <p>{selectedVideo.description}</p>
+                        </div>
+                    </div>
+                </div>
+            )}
+
             <Footer />
         </>
     );

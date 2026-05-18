@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './EventsSidebar.css';
+import './styles/EventsSidebar.css';
 
 const EventsSidebar = ({ events, currentFilter, onFilterChange }) => {
     const [isOpen, setIsOpen] = useState(false);

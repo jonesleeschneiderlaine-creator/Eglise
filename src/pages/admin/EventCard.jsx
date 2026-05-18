@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './EventCard.css';
+import './styles/EventCard.css';
 
 const EventCard = ({ event, onUpdate, onDelete, onToggle }) => {
     const [day, setDay] = useState(event.day);

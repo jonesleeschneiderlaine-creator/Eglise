@@ -1,0 +1,177 @@
+/* =========================
+   SEKTYON KONTAK
+========================= */
+.contact-section {
+    padding: 80px 0;
+    background: #ffffff;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.contact-section > h2 {
+    font-size: 2.4rem;
+    text-align: center;
+    color: #1a1a1a;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.contact-section > h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #d4a33a;
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+/* =========================
+   ROW : GOCH / DWAT
+========================= */
+.contact-row {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+/* =========================
+   KÒDONNEN (GOCH)
+========================= */
+.coordonnes {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    background: #fafafa;
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+    border-left: 5px solid #d4a33a;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    color: #222;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.card p {
+    margin: 6px 0;
+    color: #444;
+    line-height: 1.5;
+    font-size: 0.98rem;
+}
+
+/* =========================
+   FÒM (DWAT)
+========================= */
+.form {
+    flex: 1 1 45%;
+    background: #fdfdfd;
+    border-radius: 16px;
+    padding: 35px 30px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+}
+
+.form h2 {
+    font-size: 1.8rem;
+    color: #1a1a1a;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-container input,
+.form-container textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #fff;
+    transition: border 0.2s;
+    box-sizing: border-box;
+}
+
+.form-container input:focus,
+.form-container textarea:focus {
+    outline: none;
+    border-color: #d4a33a;
+    box-shadow: 0 0 0 3px rgba(212, 163, 58, 0.15);
+}
+
+.form-container textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-container button {
+    padding: 14px 30px;
+    background: #d4a33a;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 6px 18px rgba(212, 163, 58, 0.3);
+}
+
+.form-container button:hover {
+    background: #b8862c;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   RESPONSIVE (tablèt ak mobil)
+========================= */
+@media (max-width: 768px) {
+    .contact-row {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .contact-section > h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .form h2 {
+        text-align: center;
+    }
+
+    .form-container button {
+        align-self: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 18px 20px;
+    }
+
+    .form {
+        padding: 25px 20px;
+    }
+}

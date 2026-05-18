@@ -1,5 +1,5 @@
 import React from 'react';
-import './DonsSection.css';
+import './styles/DonsSection.css';
 
 const DonsSection = () => {
     const copyToClipboard = (text, btn) => {
@@ -13,8 +13,8 @@ const DonsSection = () => {
         <section className="dons-section" id="dons">
             <div className="container">
                 <div className="title-with-logo centered">
-                    <img src="/images/logo.jpg" alt="Logo" className="title-logo" />
-                    <h3 className="section-title">Soutenir l'église 💝</h3>
+                 
+                    <h3 className="section-title">Soutenir l'église </h3>
                 </div>
                 <p className="dons-intro">Votre générosité contribue à l'œuvre de Dieu. Que Dieu vous bénisse abondamment.</p>
                 <div className="dons-grid">
@@ -32,6 +32,7 @@ const DonsSection = () => {
                     </div>
                     <div className="don-card">
                         <div className="don-icon"><i className="fas fa-university"></i></div>
+                        {/* eske legliz la gen kont an bank */}
                         <h4>Compte Bancaire</h4>
                         <div className="don-number"><span>Banque Unibank</span></div>
                         <p className="don-bank-info">Compte: 1234 5678 9012 3456</p>
@@ -39,8 +40,9 @@ const DonsSection = () => {
                     </div>
                     <div className="don-card">
                         <div className="don-icon"><i className="fas fa-envelope"></i></div>
+                        {/* eske legliz la gen zelle */}
                         <h4>Zelle</h4>
-                        <div className="don-number"><span>eglisegrace@gmail.com</span></div>
+                        <div className="don-number"><span>#nim zelle : ************</span></div>
                         <button className="copy-btn" onClick={(e) => copyToClipboard('eglisegrace@gmail.com', e.currentTarget)}><i className="fas fa-copy"></i> Copier</button>
                     </div>
                 </div>

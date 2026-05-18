@@ -9,25 +9,17 @@
     align-items: center;
     justify-content: center;
 }
-
-.verse-slide {
-    position: absolute;
-    width: 100%;
-    opacity: 0;
-    transition: opacity 0.6s ease-in-out;
-    color: white;
+.verse-banner p {
+    color: #fff;
     font-size: 1rem;
-    font-weight: 500;
+    margin: 0;
+    font-weight: bold;
 }
 
-.verse-slide i {
-    margin-right: 12px;
-}
 
-.verse-slide.active {
-    opacity: 1;
-    position: relative;
-}
+
+
+
 
 @media (max-width: 768px) {
     .verse-slide {

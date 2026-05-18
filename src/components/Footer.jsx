@@ -1,5 +1,5 @@
 import React from 'react';
-import './Footer.css';
+import './styles/Footer.css';
 
 const Footer = () => {
     return (
@@ -7,7 +7,8 @@ const Footer = () => {
             <div className="container">
                 <div className="footer-content">
                     <p>© 2025 Église de DIEU de la Grâce par la Foi en Christ — Toute grâce soit avec vous.</p>
-                    <p className="pastor-footer">Pasteur Elisee Rome | +509 34236300 / 47238390 / 40831418</p>
+
+                    <p className="pastor-footer">Realiser par J&J groupe | exemple@gmail.com</p>
                 </div>
             </div>
         </footer>

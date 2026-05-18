@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './HeroSlider.css';
+import './styles/HeroSlider.css';
+import { Link } from 'react-router-dom';
 
 const slides = [
     {
@@ -57,7 +58,17 @@ const HeroSlider = () => {
 
     return (
         <div className="hero">
+            <div className="display">
 
+                <div className='mesaage'>
+                    <h1 className="hero-title">Bienvenue à l'Église de la Grâce</h1>
+                    <p className="hero-subtitle">Une communauté vivante, enracinée dans la grâce et la foi en Jésus-Christ.</p>
+                    <div className="btn-hero">
+                        <Link to="/events" className="btn-hero-link">
+                            Événements
+                        </Link>
+                    </div>
+                </div>
             <div className="hero-slider">
 
                 {slides.map((slide, index) => (
@@ -85,10 +96,6 @@ const HeroSlider = () => {
                     </div>
 
                 ))}
-
-            </div>
-
-            {/* Bouton gauche */}
             <button className="slider-btn prev" onClick={prevSlide}>
                 ←
             </button>
@@ -97,6 +104,11 @@ const HeroSlider = () => {
             <button className="slider-btn next" onClick={nextSlide}>
                 →
             </button>
+
+            </div>
+            </div>
+
+            {/* Bouton gauche */}
 
             {/* Points */}
             <div className="slider-dots">

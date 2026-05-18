@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import './Header.css';
+import './styles/Header.css';
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -55,10 +55,9 @@ const Header = () => {
                     {/* Navigation Desktop */}
                     <nav className="desktop-nav">
                         <Link to="/">Accueil</Link>
-                        <a href="#a-propos">À propos</a>
+                        <Link to="/about">À propos</Link>
                         <Link to="/video">Vidéos</Link>
-                        <a href="#dons">Dons</a>
-                        <a href="#contact">Contact</a>
+                        <Link to="/contact">Contact</Link>
                     </nav>
 
                     {/* Bouton Burger Mobile */}
@@ -74,9 +73,8 @@ const Header = () => {
 
             {/* Overlay */}
             <div
-                className={`mobile-nav-overlay ${
-                    menuOpen ? 'active' : ''
-                }`}
+                className={`mobile-nav-overlay ${menuOpen ? 'active' : ''
+                    }`}
                 onClick={closeMenu}
             ></div>
 
@@ -106,21 +104,21 @@ const Header = () => {
                         Accueil
                     </Link>
 
-                    <a href="#a-propos" onClick={closeMenu}>
+                    <Link to="/about" onClick={closeMenu}>
                         À propos
-                    </a>
+                    </Link>
 
                     <Link to="/video" onClick={closeMenu}>
                         Vidéos
                     </Link>
 
-                    <a href="#dons" onClick={closeMenu}>
+                    <Link to="/donations" onClick={closeMenu}>
                         Dons
-                    </a>
+                    </Link>
 
-                    <a href="#contact" onClick={closeMenu}>
+                    <Link to="/contact" onClick={closeMenu}>
                         Contact
-                    </a>
+                    </Link  >
 
                 </div>
 

@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useEvents } from '../hooks/useEvents';
-import EventCard from './EventCard';
+import { useEvents } from '../../hooks/useEvents';
 import AddEventForm from './AddEventForm';
-import './Admin.css';
+import './styles/Admin.css';
 
 const ADMIN_PASSWORD = 'admin123';
 

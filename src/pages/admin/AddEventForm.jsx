@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './AddEventForm.css';
+import './styles/AddEventForm.css';
 
 const AddEventForm = ({ onAdd }) => {
     const [day, setDay] = useState('');
