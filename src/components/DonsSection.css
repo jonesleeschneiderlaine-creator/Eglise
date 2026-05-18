@@ -1,0 +1,154 @@
+.dons-section {
+    padding: 70px 0;
+    background: linear-gradient(135deg, #fefaf0, #fff8e8);
+}
+
+.centered {
+    justify-content: center;
+}
+
+.dons-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    font-size: 1.1rem;
+    padding: 0 16px;
+}
+
+.dons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.don-card {
+    background: white;
+    border-radius: 28px;
+    padding: 30px 20px;
+    text-align: center;
+    border: 1px solid #f0e2c5;
+    transition: transform 0.3s;
+}
+
+.don-card:hover {
+    transform: translateY(-6px);
+    border-color: #e9c46a;
+}
+
+.don-icon {
+    width: 70px;
+    height: 70px;
+    background: #e9c46a20;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.don-icon i {
+    font-size: 2rem;
+    color: #d4a33a;
+}
+
+.don-card h4 {
+    font-size: 1.5rem;
+    color: #b8860b;
+    margin-bottom: 15px;
+}
+
+.don-number {
+    background: #fdf8ed;
+    padding: 12px;
+    border-radius: 50px;
+    margin: 15px 0;
+    border: 1px solid #e9c46a;
+    word-break: break-word;
+}
+
+.don-number span {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.copy-btn {
+    background: #e9c46a;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.don-bank-info {
+    font-size: 0.85rem;
+    margin: 12px 0;
+    color: #5a6a6f;
+}
+
+.don-verse {
+    background: white;
+    border-radius: 24px;
+    padding: 30px;
+    text-align: center;
+    border-left: 5px solid #e9c46a;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .dons-section {
+        padding: 50px 0;
+    }
+    
+    .dons-intro {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dons-section {
+        padding: 40px 0;
+    }
+    
+    .dons-grid {
+        gap: 20px;
+        padding: 0 16px;
+    }
+    
+    .don-card {
+        padding: 20px;
+    }
+    
+    .don-card h4 {
+        font-size: 1.3rem;
+    }
+    
+    .don-verse {
+        padding: 20px;
+        margin: 0 16px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dons-grid {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .don-icon {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .don-icon i {
+        font-size: 1.5rem;
+    }
+}

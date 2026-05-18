@@ -1,0 +1,33 @@
+.add-form {
+    background: white;
+    border-radius: 28px;
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.add-form h3 {
+    color: #b8860b;
+    margin-bottom: 20px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.form-grid input, .form-grid select {
+    padding: 12px;
+    border: 1px solid #e9e0d0;
+    border-radius: 16px;
+}
+
+.btn-add {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 40px;
+    cursor: pointer;
+}

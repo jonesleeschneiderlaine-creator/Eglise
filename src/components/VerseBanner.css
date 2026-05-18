@@ -1,0 +1,36 @@
+.verse-banner {
+    background: linear-gradient(135deg, #8b691b 0%, #c9a03d 100%);
+    padding: 14px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.verse-slide {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.verse-slide i {
+    margin-right: 12px;
+}
+
+.verse-slide.active {
+    opacity: 1;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .verse-slide {
+        font-size: 0.75rem;
+    }
+}

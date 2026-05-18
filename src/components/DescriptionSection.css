@@ -1,0 +1,170 @@
+/* =========================
+   SECTION DESCRIPTION
+========================= */
+
+.description-section {
+    padding: 70px 0;
+    background: #ffffff;
+}
+
+/* =========================
+   TITRE + LOGO
+========================= */
+
+.title-with-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.title-logo {
+    width: 50px;
+    height: auto;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.description-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+/* =========================
+   TEXTE
+========================= */
+
+.description-text p {
+    font-size: 1.05rem;
+    color: #2d3b3f;
+    margin-bottom: 1.4rem;
+    line-height: 1.6;
+}
+
+/* =========================
+   CARTE PASTEUR
+========================= */
+
+.pastor-card {
+    background: #fffcf0;
+    border-left: 5px solid #e9c46a;
+    padding: 22px;
+    border-radius: 20px;
+    display: flex;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.pastor-card i {
+    font-size: 2rem;
+    color: #d4a33a;
+}
+
+.pastor-name {
+    font-size: 1.2rem;
+    color: #d4a33a;
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.description-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.description-gallery img {
+    width: 100%;
+    max-width: 500px;
+
+    /* IMPORTANT */
+    object-fit: contain;
+
+    border-radius: 24px;
+
+    /* retire les coupures */
+    height: auto;
+
+    /* ombre jolie */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   TABLETTE
+========================= */
+
+@media (max-width: 992px) {
+
+    .description-section {
+        padding: 50px 0;
+    }
+
+    .description-grid {
+        gap: 30px;
+    }
+
+    .description-text p {
+        font-size: 1rem;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .description-section {
+        padding: 40px 0;
+    }
+
+    .description-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .description-gallery {
+        order: 2;
+    }
+
+    .description-text {
+        order: 1;
+    }
+
+    .pastor-card {
+        padding: 18px;
+        gap: 12px;
+    }
+
+    .pastor-card i {
+        font-size: 1.8rem;
+    }
+
+    .description-gallery img {
+        max-width: 100%;
+    }
+}
+
+/* =========================
+   PETITS MOBILES
+========================= */
+
+@media (max-width: 480px) {
+
+    .title-logo {
+        width: 40px;
+    }
+
+    .pastor-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+}

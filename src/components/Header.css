@@ -1,0 +1,263 @@
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid #f0e0b0;
+    padding: 14px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    height: 55px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.logo-text h1 {
+    font-size: 1.2rem;
+    line-height: 1.3;
+    color: #b8860b;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* =========================
+   NAVIGATION DESKTOP
+========================= */
+
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.desktop-nav a {
+    text-decoration: none;
+    color: #3e2c22;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.desktop-nav a:hover {
+    color: #b8860b;
+}
+
+/* =========================
+   BOUTON BURGER
+========================= */
+
+.mobile-menu-btn {
+    display: none;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    color: #fff;
+    background: #b8860b;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    z-index: 101;
+    padding: 6px 12px;
+    transition: 0.3s;
+}
+
+.mobile-menu-btn:hover {
+    background: #020202;
+}
+
+/* =========================
+   MENU MOBILE
+========================= */
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background: linear-gradient(135deg, #ffffff 0%, #fefaf0 100%);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-nav.active {
+    right: 0;
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =========================
+   HEADER MENU MOBILE
+========================= */
+
+.mobile-nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #b8860b, #d4a33a);
+}
+
+.mobile-nav-logo {
+    height: 50px;
+    width: auto;
+    border-radius: 10px;
+    background: white;
+    padding: 5px;
+}
+
+.mobile-nav-close {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* =========================
+   LIENS MOBILE
+========================= */
+
+.mobile-nav-links {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 20px;
+}
+
+.mobile-nav-links a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #3e2c22;
+    padding: 12px 15px;
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+
+.mobile-nav-links a:hover {
+    background: #e9c46a20;
+    color: #b8860b;
+}
+
+/* =========================
+   FOOTER MOBILE
+========================= */
+
+.mobile-nav-footer {
+    padding: 20px;
+    border-top: 1px solid #f0e2c5;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #8b7a6b;
+}
+
+.mobile-nav-footer p {
+    margin: 5px 0;
+}
+
+/* =========================
+   TABLETTE + MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .logo-text h1 {
+        font-size: 0.85rem;
+        max-width: 200px;
+        line-height: 1.2;
+    }
+
+    .logo-img {
+        height: 40px;
+    }
+}
+
+/* =========================
+   PETITS MOBILES
+========================= */
+
+@media (max-width: 480px) {
+
+    .nav-container {
+        padding: 0 15px;
+    }
+
+    .logo-img {
+        height: 35px;
+    }
+
+    .logo-text h1 {
+        font-size: 0.7rem;
+        max-width: 160px;
+    }
+
+    .mobile-menu-btn {
+        font-size: 1.5rem;
+    }
+
+    .mobile-nav {
+        width: 85%;
+    }
+}

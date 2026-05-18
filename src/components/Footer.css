@@ -1,0 +1,41 @@
+.footer {
+    background: #2b2a27;
+    color: #e9e0d3;
+    padding: 34px 0;
+    text-align: center;
+    border-top: 4px solid #e9c46a;
+}
+
+.footer-content p {
+    margin: 8px 0;
+    font-size: 0.9rem;
+}
+
+.pastor-footer {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    color: #e9c46a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer {
+        padding: 25px 0;
+    }
+    
+    .footer-content p {
+        font-size: 0.75rem;
+        padding: 0 16px;
+    }
+    
+    .pastor-footer {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-content p {
+        font-size: 0.7rem;
+    }
+}

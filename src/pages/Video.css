@@ -1,0 +1,153 @@
+.video-hero {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    padding: 80px 0;
+    text-align: center;
+    color: white;
+}
+
+.video-hero h1 {
+    font-size: 3rem;
+    color: #e9c46a;
+}
+
+.video-hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.videos-grid {
+    padding: 60px 0;
+    background: #fefaf0;
+}
+
+.video-card {
+    background: white;
+    border-radius: 28px;
+    overflow: hidden;
+    margin-bottom: 50px;
+    box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-info {
+    padding: 24px 30px;
+}
+
+.video-date {
+    background: #e9c46a20;
+    color: #b8860b;
+    padding: 6px 14px;
+    border-radius: 40px;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.video-info h3 {
+    font-size: 1.6rem;
+    color: #8b5a2b;
+    margin-bottom: 12px;
+}
+
+.video-description {
+    color: #4a5b60;
+    line-height: 1.6;
+}
+
+.btn-retour {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #e9c46a;
+    color: #2b2a27;
+    padding: 12px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    margin-bottom: 30px;
+    transition: background 0.3s;
+}
+
+.btn-retour:hover {
+    background: #d4a33a;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .video-hero {
+        padding: 60px 0;
+    }
+    
+    .video-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .video-info h3 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .video-hero {
+        padding: 40px 0;
+    }
+    
+    .video-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .video-hero p {
+        font-size: 1rem;
+    }
+    
+    .videos-grid {
+        padding: 40px 0;
+    }
+    
+    .video-info {
+        padding: 18px 20px;
+    }
+    
+    .video-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    .btn-retour {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-hero h1 {
+        font-size: 1.6rem;
+    }
+    
+    .video-date {
+        font-size: 0.7rem;
+    }
+    
+    .video-info h3 {
+        font-size: 1rem;
+    }
+    
+    .video-description {
+        font-size: 0.85rem;
+    }
+}

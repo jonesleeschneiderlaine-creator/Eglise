@@ -1,0 +1,89 @@
+.event-card {
+    background: white;
+    border-radius: 24px;
+    padding: 20px;
+    border: 1px solid #e9e0d0;
+    position: relative;
+}
+
+.event-card.closed {
+    background: #fff5f0;
+    border-left: 5px solid #e74c3c;
+}
+
+.status-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 4px 10px;
+    border-radius: 30px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.status-badge.open {
+    background: #27ae60;
+    color: white;
+}
+
+.status-badge.closed {
+    background: #e74c3c;
+    color: white;
+}
+
+.event-card h3 {
+    color: #b8860b;
+    margin-bottom: 15px;
+    padding-right: 80px;
+}
+
+.fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.fields label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #8b7a6b;
+    display: block;
+}
+
+.fields input, .fields select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #e9e0d0;
+    border-radius: 12px;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
+.btn-toggle, .btn-save, .btn-delete {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 0.7rem;
+}
+
+.btn-toggle {
+    background: #3498db;
+    color: white;
+}
+
+.btn-save {
+    background: #e9c46a;
+    color: #2b2a27;
+}
+
+.btn-delete {
+    background: #e74c3c;
+    color: white;
+}
