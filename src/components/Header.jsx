@@ -47,7 +47,7 @@ const Header = () => {
 
                         <div className="logo-text">
                             <h1>
-                                Église de DIEU de la Grâce par la Foi en Christ
+                                Mission Église de DIEU de la Grâce par la Foi en Christ
                             </h1>
                         </div>
                     </div>

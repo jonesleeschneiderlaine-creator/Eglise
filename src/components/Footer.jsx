@@ -6,9 +6,9 @@ const Footer = () => {
         <footer className="footer">
             <div className="container">
                 <div className="footer-content">
-                    <p>© 2025 Église de DIEU de la Grâce par la Foi en Christ — Toute grâce soit avec vous.</p>
+                    <p>© 2025 Mission Église de DIEU de la Grâce par la Foi en Christ — Toute grâce soit avec vous.</p>
 
-                    <p className="pastor-footer">Realiser par J&J groupe | exemple@gmail.com</p>
+                    <p className="pastor-footer">Realiser par J&J groupe | jjgroup310@gmail.com</p>
                 </div>
             </div>
         </footer>
