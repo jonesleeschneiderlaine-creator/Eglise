@@ -67,6 +67,24 @@
     color: #b8860b;
 }
 
+.header-login-btn,
+.mobile-login-btn {
+    background: #ffffff;
+    border: 1px solid #f0e0b0;
+    border-radius: 999px;
+    padding: 10px 16px;
+    color: #3e2c22;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.header-login-btn:hover,
+.mobile-login-btn:hover {
+    color: #b8860b;
+    border-color: #d4a33a;
+}
+
 /* =========================
    BOUTON BURGER
 ========================= */
@@ -193,6 +211,14 @@
     color: #b8860b;
 }
 
+.mobile-login-btn {
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 12px 15px;
+    border-radius: 12px;
+}
+
 /* =========================
    FOOTER MOBILE
 ========================= */
@@ -207,6 +233,77 @@
 
 .mobile-nav-footer p {
     margin: 5px 0;
+}
+
+.login-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1200;
+    padding: 20px;
+}
+
+.login-modal {
+    width: 100%;
+    max-width: 380px;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 28px 24px 24px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+.login-modal h3 {
+    margin: 0 0 18px;
+    color: #b8860b;
+    text-align: center;
+}
+
+.login-modal form {
+    display: grid;
+    gap: 14px;
+}
+
+.login-modal input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #e9e0d0;
+    border-radius: 14px;
+    font-size: 1rem;
+}
+
+.login-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: #f6f1e8;
+    color: #3e2c22;
+    cursor: pointer;
+}
+
+.header-login-submit {
+    background: linear-gradient(135deg, #b8860b, #d4a33a);
+    border: none;
+    border-radius: 999px;
+    padding: 12px 16px;
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.header-login-error {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 10px 12px;
+    border-radius: 12px;
+    font-size: 0.9rem;
 }
 
 /* =========================

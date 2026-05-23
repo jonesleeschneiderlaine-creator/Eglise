@@ -26,7 +26,6 @@ const Home = () => {
             <ContactSection />
             <Footer />
             <EventsSidebar events={events} currentFilter={filter} onFilterChange={setFilter} />
-            {/* <a href="/admin" className="admin-link" target="_blank"><i className="fas fa-lock"></i> Admin</a> */}
         </>
     );
 };

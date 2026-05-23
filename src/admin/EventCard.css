@@ -37,6 +37,12 @@
     padding-right: 80px;
 }
 
+.event-meta {
+    margin: -8px 0 15px;
+    font-size: 0.85rem;
+    color: #8b7a6b;
+}
+
 .fields {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -86,4 +92,14 @@
 .btn-delete {
     background: #e74c3c;
     color: white;
+}
+
+@media (max-width: 768px) {
+    .fields {
+        grid-template-columns: 1fr;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
 }

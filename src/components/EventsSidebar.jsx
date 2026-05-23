@@ -4,17 +4,16 @@ import './EventsSidebar.css';
 const EventsSidebar = ({ events, currentFilter, onFilterChange }) => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const getLocationIcon = (location) => {
-        if (location === "Bobin") return <i className="fas fa-tree"></i>;
-        if (location === "Fortin") return <i className="fas fa-building"></i>;
-        return <i className="fas fa-church"></i>;
-    };
+    const locations = [...new Set(events.map((event) => event.localisation).filter(Boolean))];
+    const filteredEvents = currentFilter === 'all'
+        ? events
+        : events.filter((event) => event.localisation === currentFilter);
+    const monthOrder = ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Decembre'];
 
-    const filteredEvents = currentFilter === 'all' ? events : events.filter(e => e.location === currentFilter);
-    const monthOrder = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
     const sortedEvents = [...filteredEvents].sort((a, b) => {
         const monthA = monthOrder.indexOf(a.month);
         const monthB = monthOrder.indexOf(b.month);
+
         if (monthA !== monthB) return monthA - monthB;
         return a.day - b.day;
     });
@@ -22,32 +21,44 @@ const EventsSidebar = ({ events, currentFilter, onFilterChange }) => {
     return (
         <>
             <button className="open-sidebar-btn" onClick={() => setIsOpen(true)}>
-                <i className="fas fa-calendar-alt"></i> <span>Événements</span>
+                <i className="fas fa-calendar-alt"></i> <span>Evenements</span>
             </button>
             <div className={`events-sidebar ${isOpen ? 'open' : ''}`}>
                 <div className="events-header">
                     <i className="fas fa-calendar-alt"></i>
-                    <h3>📅 Événements à venir</h3>
-                    <button className="close-sidebar" onClick={() => setIsOpen(false)}> ✕</button>
-                   
+                    <h3>Evenements</h3>
+                    <button className="close-sidebar" onClick={() => setIsOpen(false)}>X</button>
                 </div>
                 <div className="filters-container">
-                    <button className={`filter-btn ${currentFilter === 'all' ? 'active' : ''}`} onClick={() => onFilterChange('all')}>⛪ Toutes</button>
-                    <button className={`filter-btn ${currentFilter === 'Bobin' ? 'active' : ''}`} onClick={() => onFilterChange('Bobin')}>🌿 Bobin</button>
-                    <button className={`filter-btn ${currentFilter === 'Fortin' ? 'active' : ''}`} onClick={() => onFilterChange('Fortin')}>🏢 Fortin</button>
+                    <button className={`filter-btn ${currentFilter === 'all' ? 'active' : ''}`} onClick={() => onFilterChange('all')}>
+                        Toutes
+                    </button>
+                    {locations.map((location) => (
+                        <button
+                            key={location}
+                            className={`filter-btn ${currentFilter === location ? 'active' : ''}`}
+                            onClick={() => onFilterChange(location)}
+                        >
+                            {location}
+                        </button>
+                    ))}
                 </div>
                 <div className="events-list">
                     {sortedEvents.length === 0 ? (
-                        <div className="no-events"><i className="fas fa-calendar-times"></i><p>Aucun événement</p></div>
+                        <div className="no-events"><i className="fas fa-calendar-times"></i><p>Aucun evenement</p></div>
                     ) : (
-                        sortedEvents.map(event => (
-                            <div key={event.id} className={`event-item ${event.status === 'closed' ? 'closed' : ''}`}>
-                                <div className="event-date"><span className="event-day">{event.day}</span><span className="event-month">{event.month}</span></div>
+                        sortedEvents.map((event) => (
+                            <div key={event.id} className={`event-item ${event.status === 'passer' ? 'closed' : ''}`}>
+                                <div className="event-date">
+                                    <span className="event-day">{event.day}</span>
+                                    <span className="event-month">{event.month}</span>
+                                </div>
                                 <div className="event-details">
-                                    <h4>{event.title}{event.status === 'closed' && <span className="closed-badge">🔴 FERMÉ</span>}</h4>
+                                    <h4>{event.title}{event.status === 'passer' && <span className="closed-badge">Passe</span>}</h4>
                                     <p><i className="fas fa-clock"></i> {event.time}</p>
-                                    <p>{getLocationIcon(event.location)} {event.location}</p>
-                                    {event.status === 'closed' && <p className="closed-message"><i className="fas fa-ban"></i> Événement annulé</p>}
+                                    <p><i className="fas fa-church"></i> {event.localisation}</p>
+                                    <p><i className="fas fa-user-shield"></i> Ajoute par {event.localisation}</p>
+                                    {event.status === 'passer' && <p className="closed-message"><i className="fas fa-ban"></i> Evenement passe</p>}
                                 </div>
                             </div>
                         ))

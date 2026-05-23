@@ -1,50 +1,136 @@
-import { useState, useEffect } from 'react';
-import { defaultEvents } from '../data/defaultEvents';
+import { useCallback, useEffect, useState } from 'react';
+import { supabase } from '../../lib/supabase';
 
-export const useEvents = () => {
+const normalizeStatus = (status) => {
+    if (status === 'open') return 'a_venir';
+    if (status === 'closed') return 'passer';
+    return status ?? 'a_venir';
+};
+
+const normalizeEvent = (event) => ({
+    ...event,
+    status: normalizeStatus(event.status),
+    localisation: event.localisation ?? '',
+});
+
+export const useEvents = ({ profile } = {}) => {
     const [events, setEvents] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState('');
+
+    const fetchEvents = useCallback(async () => {
+        setLoading(true);
+        setError('');
+
+        let query = supabase
+            .from('events')
+            .select('*')
+            .order('month', { ascending: true })
+            .order('day', { ascending: true });
+
+        if (profile?.type === 'admin' && profile.localisation) {
+            query = query.eq('localisation', profile.localisation);
+        }
+
+        const { data, error: fetchError } = await query;
+
+        if (fetchError) {
+            setError(fetchError.message);
+            setEvents([]);
+        } else {
+            setEvents((data ?? []).map(normalizeEvent));
+        }
+
+        setLoading(false);
+    }, [profile?.localisation, profile?.type]);
 
     useEffect(() => {
-        const stored = localStorage.getItem('eglise_events');
-        if (stored) {
-            setEvents(JSON.parse(stored));
-        } else {
-            localStorage.setItem('eglise_events', JSON.stringify(defaultEvents));
-            setEvents(defaultEvents);
+        fetchEvents();
+    }, [fetchEvents]);
+
+    const addEvent = useCallback(async (eventData) => {
+        const baseLocalisation = profile?.type === 'admin'
+            ? profile.localisation
+            : eventData.localisation;
+
+        const payload = {
+            ...eventData,
+            status: normalizeStatus(eventData.status),
+            localisation: baseLocalisation,
+        };
+
+        const { data, error: insertError } = await supabase
+            .from('events')
+            .insert(payload)
+            .select()
+            .single();
+
+        if (insertError) {
+            throw insertError;
         }
-        setLoading(false);
+
+        setEvents((current) => [...current, normalizeEvent(data)]);
+        return data;
+    }, [profile?.localisation, profile?.type]);
+
+    const updateEvent = useCallback(async (id, updatedData) => {
+        const payload = {
+            ...updatedData,
+            status: normalizeStatus(updatedData.status),
+        };
+
+        if (profile?.type === 'admin') {
+            payload.localisation = profile.localisation;
+        }
+
+        const { data, error: updateError } = await supabase
+            .from('events')
+            .update(payload)
+            .eq('id', id)
+            .select()
+            .single();
+
+        if (updateError) {
+            throw updateError;
+        }
+
+        setEvents((current) => current.map((event) => (
+            event.id === id ? normalizeEvent(data) : event
+        )));
+
+        return data;
+    }, [profile?.localisation, profile?.type]);
+
+    const deleteEvent = useCallback(async (id) => {
+        const { error: deleteError } = await supabase
+            .from('events')
+            .delete()
+            .eq('id', id);
+
+        if (deleteError) {
+            throw deleteError;
+        }
+
+        setEvents((current) => current.filter((event) => event.id !== id));
     }, []);
 
-    const saveEvents = (newEvents) => {
-        setEvents(newEvents);
-        localStorage.setItem('eglise_events', JSON.stringify(newEvents));
-    };
+    const toggleEventStatus = useCallback(async (id) => {
+        const target = events.find((event) => event.id === id);
 
-    const addEvent = (event) => {
-        const newId = Math.max(...events.map(e => e.id), 0) + 1;
-        const newEvent = { ...event, id: newId };
-        saveEvents([...events, newEvent]);
-    };
+        if (!target) return null;
 
-    const updateEvent = (id, updatedData) => {
-        const newEvents = events.map(event => 
-            event.id === id ? { ...event, ...updatedData } : event
-        );
-        saveEvents(newEvents);
-    };
+        const nextStatus = target.status === 'a_venir' ? 'passer' : 'a_venir';
+        return updateEvent(id, { status: nextStatus });
+    }, [events, updateEvent]);
 
-    const deleteEvent = (id) => {
-        const newEvents = events.filter(event => event.id !== id);
-        saveEvents(newEvents);
+    return {
+        events,
+        loading,
+        error,
+        addEvent,
+        updateEvent,
+        deleteEvent,
+        toggleEventStatus,
+        refreshEvents: fetchEvents,
     };
-
-    const toggleEventStatus = (id) => {
-        const newEvents = events.map(event =>
-            event.id === id ? { ...event, status: event.status === 'open' ? 'closed' : 'open' } : event
-        );
-        saveEvents(newEvents);
-    };
-
-    return { events, loading, addEvent, updateEvent, deleteEvent, toggleEventStatus };
 };

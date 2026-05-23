@@ -106,7 +106,64 @@
     margin-bottom: 50px;
 }
 
+.dashboard-alert {
+    background: white;
+    border-left: 4px solid #b8860b;
+    color: #5b4a21;
+    padding: 14px 18px;
+    border-radius: 14px;
+    margin-bottom: 24px;
+}
+
+.dashboard-section {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.section-card {
+    background: white;
+    border-radius: 28px;
+    padding: 30px;
+}
+
+.section-card h2 {
+    color: #b8860b;
+    margin-bottom: 18px;
+}
+
+.church-form .helper-text {
+    margin-bottom: 16px;
+    color: #8b7a6b;
+    font-size: 0.9rem;
+}
+
+.church-list {
+    display: grid;
+    gap: 14px;
+}
+
+.church-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    border: 1px solid #e9e0d0;
+    border-radius: 18px;
+    padding: 14px 16px;
+}
+
+.church-item p {
+    margin: 6px 0 0;
+    color: #8b7a6b;
+}
+
 @media (max-width: 768px) {
     .admin-header { flex-direction: column; text-align: center; }
     .events-grid { grid-template-columns: 1fr; }
+    .admin-buttons { width: 100%; justify-content: center; flex-wrap: wrap; }
+    .dashboard-section { grid-template-columns: 1fr; }
+    .section-card { padding: 22px; }
+    .church-item { flex-direction: column; align-items: stretch; }
 }
