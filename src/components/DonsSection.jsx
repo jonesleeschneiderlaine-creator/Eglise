@@ -27,7 +27,7 @@ const DonsSection = () => {
                     <div className="don-card">
                         <div className="don-icon"><i className="fas fa-mobile-alt"></i></div>
                         <h4>Natcash</h4>
-                        <div className="don-number"><span>+509 4723 8390</span></div>
+                        <div className="don-number"><span>+509 4083 1418</span></div>
                         <button className="copy-btn" onClick={(e) => copyToClipboard('+50947238390', e.currentTarget)}><i className="fas fa-copy"></i> Copier</button>
                     </div>
                     <div className="don-card">

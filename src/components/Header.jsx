@@ -98,7 +98,7 @@ const Header = () => {
 
                         <div className="logo-text">
                             <h1>
-                                Eglise de DIEU de la Grace par la Foi en Christ
+                                Mission Eglise de DIEU de la Grace par la Foi en Christ
                             </h1>
                         </div>
                     </div>
