@@ -5,8 +5,8 @@ const ContactSection = () => {
     return (
         <section className="contact-section" id="contact">
             <div className="container">
-                <h3 className="section-title text-center">...</h3>
-                <div className="contact-grid">
+                <h3 className=".section-title.text-center">contact</h3>
+                {/* <div className="contact-grid">
                     <div className="contact-card">
                         <i className="fas fa-map-marker-alt"></i>
                         <h4>📍 Église de Bobin</h4>
@@ -17,7 +17,7 @@ const ContactSection = () => {
                         <h4>📍 Église de Fortin</h4>
                         <p>Fortin, Haïti<br />(corlette)</p>
                     </div>
-                </div>
+                </div> */}
                 <div className="contact-grid">
                     <div className="contact-card">
                         <i className="fas fa-phone-alt"></i>
