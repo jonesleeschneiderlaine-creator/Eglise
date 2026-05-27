@@ -60,7 +60,6 @@ const videos = [
 const Video = () => {
     return (
         <>
-            <Header />
             <VerseBanner />
             <section className="video-hero">
                 <div className="container">

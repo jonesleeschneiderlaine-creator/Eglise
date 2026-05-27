@@ -5,7 +5,7 @@ const ContactSection = () => {
     return (
         <section className="contact-section" id="contact">
             <div className="container">
-                <h3 className=".section-title.text-center">contact</h3>
+                <h3 className=".section-title.text-center">___________________________________________________________</h3>
                 {/* <div className="contact-grid">
                     <div className="contact-card">
                         <i className="fas fa-map-marker-alt"></i>

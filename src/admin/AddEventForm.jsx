@@ -65,8 +65,8 @@ const AddEventForm = ({ onAdd, availableLocalisations = [], lockedLocalisation =
                         ))}
                     </select>
                     <select value={status} onChange={(e) => setStatus(e.target.value)} disabled={disabled}>
-                        <option value="a_venir">A venir</option>
-                        <option value="passer">Passer</option>
+                        <option value="a_venir">evenement A venir</option>
+                        <option value="passer">evenement Passer</option>
                     </select>
                 </div>
                 <button type="submit" className="btn-add" disabled={disabled}><i className="fas fa-plus"></i> Ajouter</button>

@@ -16,8 +16,8 @@ const DescriptionSection = () => {
                             <i className="fas fa-church"></i>
                             <div>
                                 <h4>Pasteur fondateur</h4>
-                                <p className="pastor-name"><strong>Pasteur Élisée Rome</strong></p>
-                                <p>Le Pasteur Élisée ROME est un serviteur dévoué au Seigneur, rempli de sagesse, dont l’appel résonne avec puissance pour annoncer l’Évangile. Sa vie entière est un témoignage de foi, d’intégrité, et d’un amour profond pour le peuple de Dieu.</p>
+                                <p className="pastor-name"><strong>Pasteur Élysée Rome</strong></p>
+                                <p>Le Pasteur Élysée ROME est un serviteur dévoué au Seigneur, rempli de sagesse, dont l’appel résonne avec puissance pour annoncer l’Évangile. Sa vie entière est un témoignage de foi, d’intégrité, et d’un amour profond pour le peuple de Dieu.</p>
                             </div>
                         </div>
                     </div>
