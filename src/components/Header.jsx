@@ -109,9 +109,10 @@ const Header = () => {
                         <Link to="/video">Videos</Link>
                         <a href="#dons">Dons</a>
                         <a href="#contact">Contact</a>
-                        {isAuthenticated && (
+                        {/* {isAuthenticated && (
                             <Link to={dashboardPath}>Dashboard</Link>
-                        )}
+                        )} */}
+                        
                         <button type="button" className="header-login-btn" onClick={handleAccountAction}>
                             {isAuthenticated ? 'Deconnexion' : 'Connexion'}
                         </button>
