@@ -14,7 +14,7 @@ const DonsSection = () => {
             <div className="container">
                 <div className="title-with-logo centered">
                     <img src="/images/logo.jpg" alt="Logo" className="title-logo" />
-                    <h3 className="section-title">Soutenir l'église 💝</h3>
+                    <h3 className="section-title">Soutenir l'église </h3>
                 </div>
                 <p className="dons-intro">Votre générosité contribue à l'œuvre de Dieu. Que Dieu vous bénisse abondamment.</p>
                 <div className="dons-grid">
